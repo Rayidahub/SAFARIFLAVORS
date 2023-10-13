@@ -6,6 +6,19 @@ Embark on a global culinary adventure with SafariFlavors, where we bring you del
 
 # Authors 
 
+@Csasaka19
+Clive Sasaka
+
+
+@humphreymbugua
+Humphrey Mbugua
+
+@Nnamaniajuluchukwu
+Nnamani Joel Ajuluchukwu
+
+@Rayidahub
+Raymond Gaius Yidawi
+
 # Branches
 
 1.   Main
