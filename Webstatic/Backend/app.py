@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_mongoengine import MongoEngine
+from flask_admin import Admin
+from flask_admin.contrib.mongoengine import ModelView
 from models.schema import Region, SubRegion, Country, Recipe
 
 app = Flask(__name)
@@ -10,6 +12,15 @@ app.config['MONGODB_SETTINGS'] = {
     'host': 'mongodb://localhost:27017/recipe_db',  # Update with your MongoDB connection string
 }
 db = MongoEngine(app)
+
+# Create the Flask-Admin instance
+admin = Admin(app, name='Recipe Admin', template_mode='bootstrap3')
+
+# Add model views for Recipe, Region, SubRegion, and Country
+admin.add_view(ModelView(Recipe))
+admin.add_view(ModelView(Region))
+admin.add_view(ModelView(SubRegion))
+admin.add_view(ModelView(Country))
 
 # Define routes and views
 @app.route('/')
