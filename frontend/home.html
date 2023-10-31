@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Flavors </title>
+    <link rel="icon" href="img/core/foody.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="" alt="Preloader">
+    </div>
+
+    <!-- Header area -->
+    <header>
+        <!-- Website navigation -->
+            <ul>
+                <li><a href="home.html"><img src="home.png" alt="Home"></a></li>
+                <li><a href="recipe.html"><img src="recipes.png" alt="Recipes"></a></li>
+                <li><a href="about.html"><img src="about.png" alt="About Us"></a></li>
+            </ul>
+        <h1>Safari Flavors</h1>
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for recipes...">
+            <button><img src="search.png" alt="Search"></button>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- Categories to be delayed -->
+        <div class="categories">
+            <div class="category" id="ea">
+                <h2>Eastern Africa</h2>
+                <img src="ea.jpg" alt="Eastern Africa">
+            </div>
+
+            <div class="category" id="wa">
+                <h2>Western Africa</h2>
+                <img src="wa.jpg" alt="Western Africa">
+            </div>
+
+        </div>
+
+        <div class="food-container">
+            <h3>A famous quote about food</h3>
+            <div class="food-images">
+                <!-- Images here -->
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="food-name"></h2>
+                <p id="food-description"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p>
+    </footer>
+</body>
+</html>

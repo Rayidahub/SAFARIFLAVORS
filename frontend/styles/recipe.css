@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    }
+.categories, .images {
+    width: 50%;
+    padding: 10px;
+}
+.category {
+    display: inline-block;
+    margin: 5px;
+}
+.country {
+    display: inline-block;
+    margin: 5px;
+}
+.category-item, .country-item {
+        display: inline-block;
+        padding: 5px;
+        cursor: pointer;
+}

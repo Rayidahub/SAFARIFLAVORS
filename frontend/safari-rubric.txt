@@ -1,0 +1,42 @@
+SAFARI FLAVORS
+
+Required pages:
+1. Homepage- home.html
+2. About us- about.html
+3. Recipe page - recipes.html
+4. Redirects to the required recipes or its display from db
+
+Required features:
+        Homepage:
+            1. head area - icon for the tab display
+                         - relevant links
+            2. Page preloader showing relevant icon
+            3. body area - header -> search bar, icons to home, recipes and about us well spaced and company name 
+                         - background image(opacity for visibility of page)
+                         - Categories of initial display to the left(EA and WA) clickable
+                         - A famous quote about food right beneath the category division
+                         - To the right a snippet of 8 foods of the selected category with appropriate alt texts well spaced within the division
+                         - The displayed images should change according to the clicked category
+                         - Clicking on any image opens a modal with more details
+                         - The image box has name on the top and the word description on the bottom of each 
+                         - The modal has a close button
+            4. Footer area - copyright sign alongside the company name and current year displayed all centrally placed.
+
+        About us:
+
+         - head and footer are similar to the home page
+         - a picture will be placed across the screen horizontally and will have the words about us within it
+         - Textual content in the middle is centered vertically, horizontally
+         - gives some details about the website and the teams dedication
+         - Add a contact us section where they will fill their name, and message that they want to share 
+         - Submit button which sends an email to our team
+         - Add a newsletter subscription section to the right og the contact us section and have a food image as its background
+
+        Recipes:
+        - header and footer are similar  to the Homepage 
+        - Similar to homepage but there's no preloader
+        - Categories have three subtypes each which are countries of the region category
+        - When a country is selected from the category subtypes the main category the page changes the images
+        - Categories floated to the left and images to the right in a container
+        
+
