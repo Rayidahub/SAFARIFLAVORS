@@ -1,11 +1,15 @@
 body {
-    background-image: url('path_to_your_background_image');
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fshef.com%2Fhomemade-food%2Fafrican-regional-cuisines%2Feast-african-food%2F&psig=AOvVaw0vMY16swMnt0B_u3NNnMOL&ust=1699028720885000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDHiq3dpYIDFQAAAAAdAAAAABAE');
     background-size: cover;
     opacity: 0.9;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
 }
 
 #header {
@@ -14,13 +18,14 @@ body {
     align-items: center;
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 12px 2px;
     text-align: center;
 }
 
 .site-title {
     float: left;
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-list {
@@ -53,16 +58,26 @@ body {
 
 .search-input {
     width: 200px;
-    padding: 5px;
+    padding: 10px 10px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    border-radius: 50px 0px 0 50px ;
+    padding:10px 10px ;
+    border: none;
 }
 
-.search-button {
-    background: none;
+.search-btn{
+    border-radius: 0 50px 50px 0;
+    margin-left: -6px;
+    padding: 10px 10px;
+    background-color: rgb(243, 238, 235);
     border: none;
 }
 
 #main-content {
     padding: 20px;
+    display: flex;
 }
 
 .categories {
@@ -77,9 +92,18 @@ body {
     width: 45%;
     text-align: center;
 }
+.category-image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
 
 .category-title {
     font-size: 24px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .category, .food-container {
@@ -92,7 +116,9 @@ body {
     margin-top: 20px;
     background-image: url('path_to_your_background_image');
     background-size: cover;
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    width: auto;
+
 }
 
 .quote {
@@ -119,9 +145,25 @@ body {
     width: 80%;
 }
 
+.food-container {
+    margin-left: 20px; 
+}
+
 .food-image {
-    width: 100px; /* adjust as needed */
-    height: 100px; /* adjust as needed */
+    width: 200px; 
+    height: 200px; 
+}
+.food-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px; 
+}
+.quote{
+    text-align: center;
+    margin: 20px 0;
+    font-size: large;
+    font-style: italic;
 }
 
 .close {
@@ -160,14 +202,19 @@ body {
 .footer-text {
     grid-column: 1 / span 3;
     text-align: center;
-    color: #333;
+    
 }
 
 footer{
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-color: #f5f5dc; /* recipe like color */
+    background-color: #f5f5dc; 
+    min-height: auto;
+}
+footer>p{
+    position: relative;
+    text-align: center;
+    margin: auto;
 }

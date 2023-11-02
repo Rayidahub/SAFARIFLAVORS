@@ -10,22 +10,26 @@
     <script src="js/script.js"></script>
 </head>
 <body class="body-style">
-    <!-- Preloader -->
-    <div id="preloader" class="preloader-style">
-        <i class="circle-preloader"></i>
-        <img src="img/core/preloader.ico" alt="">
-    </div>
-
-    <header class="header-style">
+    <header id="header">
+        <h1 class="site-title">Safari Flavors</h1>
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for recipes...">
+            <button class="search-btn" alt="Search"><i class='bx bx-search'></i></button>
+        </div>
+   
+        <!-- Website navigation -->
         <ul class="nav-list">
-            <li class="nav-item"><a href="home.html"><img src="img/core/home.ico" alt="Home"></a></li>
-            <li class="nav-item"><a href="recipe.html"><img src="img/core/recipe.ico" alt="Recipes"></a></li>
-            <li class="nav-item"><a href="about.html"><img src="img/core/about.ico" alt="About Us"></a></li>
+            <li class="nav-item"><a href="home.html"><h2>Home</h2></a></li>
+            <li class="nav-item"><a href="recipe.html"><h2>Recipes For You</h2></a></li>
+            <li class="nav-item"><a href="about.html"><h2>About Us</h2></a></li>
         </ul>
-        <h1 class="title">Safari Flavors</h1>
     </header>
 
     <hr class="divider">
+
+    <hr class="divider">
+    
 
     <div class="container">
         <div class="categories">
@@ -49,18 +53,23 @@
         </div>
 
         <div class="food-container">
-            <h3 class="quote">A famous quote about food</h3>
-            <div class="food-images">
-                <!-- Images here -->
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-                <img src="" alt="" class="food-img">
-            </div>
+            <div class="food-container">
+                <p>Recipes > Browse</p>
+                <div class="food-images">
+                    <!-- Images here -->
+                    <img class="food-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Injera_with_eight_kinds_of_stew.jpg" alt="Ijera">
+                    <img class="food-image" src="https://images.squarespace-cdn.com/content/v1/5e718d41db8d410d393c97e2/1619019439594-I67Y50O71YI5MDN1ZL7V/Tawakal+East+African+Restaurant_2.jpg" alt="pasta-pilau">
+                    <img class="food-image" src="https://assets.rebelmouse.io/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmVzX2F0IjoxNjk5MTg5Mjg3LCJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjc3NTQ2My9vcmlnaW4uanBnIn0.edGA6iTaqV7LXRvhkw6nvBVcQm8mPwxfsWmQYqE13iU/img.jpg" alt="mashed">
+                    <img class="food-image" src="https://www.chefspencil.com/wp-content/uploads/UGALI-2.jpg" alt="meat-mash">
+                    <img class="food-image" src="https://www.sorghumcheckoff.com/wp-content/uploads/2021/11/East-African-Bowl-00.jpg" alt="meat">
+                    <img class="food-image" src="https://img.atlasobscura.com/Nk_KcXUBq7j4zbd1VssaP6iM7kM4w16AB8UPAFOLZXU/rs:fill:580:580:1/g:ce/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3RoaW5n/X2ltYWdlcy8zYjlh/ZGRlMC03Yjg2LTRl/ZTMtOGZkMS0zMjE3/MDBkZmI1YTQ5ZDdk/YzliNzI4MmNkNDRh/MTlfMzczODEzODY0/OV9lZjc3OTJmMWQ4/X28uanBn.jpg" alt="Andazi">
+                    <img class="food-image" src="https://media-cdn2.greatbritishchefs.com/media/zcfc2vp5/img16470.jpg" alt="cuisine">
+                    <img class="food-image" src="https://ajojesnacks.com/wp-content/uploads/2023/02/westafricanfood1-1080x675.jpeg" alt="pan-pilau">
+                    <img class="food-image" src="https://images.squarespace-cdn.com/content/v1/63b25619bc6cb02b178c8b13/91a4608d-c86e-4a24-9215-44cfabe831f5/maxresdefault.jpg" alt="naija-andazi">
+                    <img class="food-image" src="https://c.ndtvimg.com/2023-03/0m65kep_samosa_625x300_10_March_23.jpg" alt="samosa">
+                    <img class="food-image" src="https://www.allrecipes.com/thmb/-65kjnHo27H_nnn36EVVsEJM6KQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/12978-Egusi-Soup-ddmfs-026-4x3-1-e662479f824b4b54bdc25165ad41c6b6.jpg" alt="Egusi">
+                    <img class="food-image" src="https://www.africanbites.com/wp-content/uploads/2022/03/a-plate-of-egusi-soup-served-with-plantains-copy.jpg" alt="soup">
+                </div>
         </div>
 
         <div id="myModal" class="modal">
@@ -70,7 +79,9 @@
                 <p id="food-description" class="food-description"></p>
             </div>
         </div>
+        <h3 class="quote">Instead of going out to dinner, buy good food. Cooking at home shows such affection. In a bad economy, it's more important to make yourself feel good.
 
+            ~~ Ina Garten</h3>
     
         <div class="add-food-button" onclick="document.getElementById('addFoodForm').style.display='block'">Add Food</div>
 
@@ -103,24 +114,24 @@
         </div>
     
     </div>
-    
+
     <hr>
 
     <footer class="footer-grid">
-            <div class="footer-about">
-                <h3>About Us</h3>
-                <p>Safari Flavors Family.</p>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>Email: safariflav@gmail.com</p>
-            </div>
-            <div class="footer-follow">
-                <h3>Follow Us</h3>
-                <p>Facebook | Twitter | Instagram</p>
-            </div>
-            <p class="footer-text">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p>
-        </footer>
+        <div class="footer-about">
+            <h3 class="footer-title">About Us</h3>
+            <p class="footer-text">Safari Flavors Family.</p>
+        </div>
+        <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p class="footer-text">Email: safariflav@gmail.com</p>
+        </div>
+        <div class="footer-follow">
+            <h3 class="footer-title">Follow Us</h3>
+            <p class="footer-text">Facebook | Twitter | Instagram</p>
+        </div>
+        <div><p id="footer-copyright">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p></div>
+    </footer>
     
     </body>
     </html>
