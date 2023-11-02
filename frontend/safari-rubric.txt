@@ -40,3 +40,16 @@ Required features:
         - Categories floated to the left and images to the right in a container
         
 
+
+Styling
+Homepage:
+heading should be to the left, search bar to the middle and header images to the right in the header.
+The header images should be reduced to fit perfectly within the header
+The search bar has a rounded edges
+The Categories section is to be on the left side and the food container to be on the right of the categories section
+The food container should have a background image and the images should be reduced to fit within the container and its opacity reduced
+the outlines of the category and food container should be seen clearly
+the images within the food container should all be displayed with their names right at the bottom of every image
+A background image is have an opacity that makes text within the body visible
+The footer should be at the bottom of the page and the text should be centered
+The footer and header section will have a nice recipe like color that does not affect visibility of the text

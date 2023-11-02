@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes</title>
     <link rel="icon" href="img/core/foody.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/recipe.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/script.js"></script>
 </head>
-<body>
+<body class="body-style">
     <!-- Preloader -->
-    <div id="preloader">
-        <img src="" alt="Preloader">
+    <div id="preloader" class="preloader-style">
+        <i class="circle-preloader"></i>
+        <img src="img/core/preloader.ico" alt="">
     </div>
 
-    <header>
-        <ul>
-            <li><a href="home.html"><img src="home.png" alt="Home"></a></li>
-            <li><a href="recipe.html"><img src="recipes.png" alt="Recipes"></a></li>
-            <li><a href="about.html"><img src="about.png" alt="About Us"></a></li>
+    <header class="header-style">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="home.html"><img src="img/core/home.ico" alt="Home"></a></li>
+            <li class="nav-item"><a href="recipe.html"><img src="img/core/recipe.ico" alt="Recipes"></a></li>
+            <li class="nav-item"><a href="about.html"><img src="img/core/about.ico" alt="About Us"></a></li>
         </ul>
-
-        <hr>
-
+        <h1 class="title">Safari Flavors</h1>
     </header>
+
+    <hr class="divider">
+
     <div class="container">
         <div class="categories">
             <div class="category">
@@ -47,32 +49,79 @@
         </div>
 
         <div class="food-container">
-            <h3>A famous quote about food</h3>
+            <h3 class="quote">A famous quote about food</h3>
             <div class="food-images">
                 <!-- Images here -->
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
+                <img src="" alt="" class="food-img">
             </div>
         </div>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2 id="food-name"></h2>
-                <p id="food-description"></p>
+                <h2 id="food-name" class="food-name"></h2>
+                <p id="food-description" class="food-description"></p>
             </div>
         </div>
 
-        <hr>
+    
+        <div class="add-food-button" onclick="document.getElementById('addFoodForm').style.display='block'">Add Food</div>
 
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        <div id="addFoodForm" class="add-food-form">
+            <h2 class="form-title">Add Food</h2>
+            <form action="submit-food" method="post" class="form-style">
+                <label for="food-name" class="form-label">Food Name:</label><br>
+                <input type="text" id="food-name" name="food-name" class="form-input"><br>
+                <label for="food-category" class="form-label">Food Category:</label><br>
+                <select id="food-category" name="food-category" class="form-select">
+                    <option value="EAST AFRICA">EAST AFRICA</option>
+                    <option value="WEST AFRICA">WEST AFRICA</option>
+                </select><br>
+                <label for="food-country" class="form-label">Food Country:</label><br>
+                <select id="food-country" name="food-country" class="form-select">
+                    <option value="Kenya">Kenya</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Senegal">Senegal</option>
+                </select><br>
+                <label for="food-description" class="form-label">Food Description:</label><br>
+                <textarea id="food-description" name="food-description" class="form-textarea"></textarea><br>
+                <label for="food-image" class="form-label">Food Image:</label><br>
+                <input type="file" id="food-image" name="food-image" class="form-input"><br>
+                <input type="submit" value="Submit" class="form-submit">
+            </form>
+            <div class="close-add-food-form" onclick="document.getElementById('addFoodForm').style.display='none'">Close</div>
+        </div>
+    
+    </div>
+    
+    <hr>
+
+    <footer class="footer-grid">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Safari Flavors Family.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: safariflav@gmail.com</p>
+            </div>
+            <div class="footer-follow">
+                <h3>Follow Us</h3>
+                <p>Facebook | Twitter | Instagram</p>
+            </div>
+            <p class="footer-text">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p>
+        </footer>
+    
+    </body>
+    </html>
+    

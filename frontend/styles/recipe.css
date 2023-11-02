@@ -19,3 +19,21 @@
         padding: 5px;
         cursor: pointer;
 }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.footer-about,
+.footer-contact,
+.footer-follow {
+    grid-column: span 1;
+}
+
+.footer-text {
+    grid-column: 1 / span 3;
+    text-align: center;
+    color: #333;
+}
