@@ -13,6 +13,7 @@ from models.user import User
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure secret key
 
+
 # Set up the configuration for your MongoDB database
 app.config['MONGODB_SETTINGS'] = {
     'db': 'recipe_db',
@@ -63,7 +64,7 @@ def country_recipe(country_name):
         # Handle the case where the country is not found
         return render_template('recipe.html', country_name=country_name), 404
     
-@app.route('/recipe/<country_name>/submit-food', methods=['POST'])
+@app.route('/submit-food', methods=['POST', 'GET'])
 def submit_food():
     # Get data from the form
     food_name = request.form.get('food-name')
