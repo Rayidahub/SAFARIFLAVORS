@@ -25,10 +25,11 @@ p{
     text-align: center;
 }
 
-.site-title {
-    float: left;
+.sflogo {
+    /* float: left;
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    height: 20px; */
+    width: 200px;
 }
 
 .nav-list {

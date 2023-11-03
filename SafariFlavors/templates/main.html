@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Flavors </title>
+    <link rel="icon" href="img/core/foody.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/home.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='recipe.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about-style.css') }}">
+    {% block head %}{% endblock %}
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>
