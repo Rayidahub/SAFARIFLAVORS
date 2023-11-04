@@ -1,11 +1,11 @@
 from flask import Flask, make_response, jsonify
-# from flask_admin import Admin
 from flask_mongoengine import MongoEngine
 from dotenv import load_dotenv, find_dotenv
 from os import environ
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
-from api.v1 import sf_views
+from v1 import sf_views
+from v1.admin import sf_admin
 
 
 # find and load .env file
@@ -20,6 +20,7 @@ db = MongoEngine()
 
 # register blueprints
 app.register_blueprint(sf_views)
+app.register_blueprint(sf_admin)
 
 # MongoDB configuration
 app.config["MONGODB_SETTINGS"] = [
@@ -33,9 +34,6 @@ app.config["MONGODB_SETTINGS"] = [
 
 # Link the Base to the app
 db.init_app(app)
-
-# Create the Flask-Admin instance
-# admin = Admin(app, name='Recipe Admin', template_mode='bootstrap3')
 
 # Error handling for 404
 @app.errorhandler(404)
