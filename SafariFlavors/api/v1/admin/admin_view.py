@@ -5,11 +5,11 @@ from v1.admin import sf_admin
 from flask import request, jsonify, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token
 from marshmallow import ValidationError
-import schemas
-from admin_model import Admin
-from data import Africa
-from models.country import Country
-from models.recipe import Recipe
+from v1 import schemas
+from v1.admin.admin_model import Admin
+from v1.data import Africa
+from v1.models.country import Country
+from v1.models.recipe import Recipe
 # import typing
 import bcrypt
 
@@ -171,7 +171,7 @@ def delete_recipe():
 
 
 # Country Routes
-@sf_admin.route("/update_country/<str:id>", methods=['PUT'], strict_slashes=False)
+@sf_admin.route("/update_country/<string:id>", methods=['PUT'], strict_slashes=False)
 @jwt_required()
 def update_country(id):
   """
@@ -200,9 +200,9 @@ def update_country(id):
     return jsonify({'message': err}), 500
 
 
-@sf_admin.route("/delete_country/<str:id>", methods=['DELETE'], strict_slashes=False)
+@sf_admin.route("/delete_country/<string:id>", methods=['DELETE'], strict_slashes=False)
 @jwt_required()
-def update_country(id):
+def delete_country(id):
   """
     _summary_
     delete the country data
