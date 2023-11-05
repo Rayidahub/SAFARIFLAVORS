@@ -1,7 +1,8 @@
 """ COUNTRY MODEL """
 import datetime
 import mongoengine
-from recipe import Recipe
+from v1.models.recipe import Recipe
+from v1.enums import SubRegion
 
 
 class Country(mongoengine.Document):
@@ -12,7 +13,7 @@ class Country(mongoengine.Document):
   created_at = mongoengine.DateTimeField(default=datetime.datetime.now())
   updated_at = mongoengine.DateTimeField(default=datetime.datetime.now())
   region = mongoengine.StringField(default='Africa')
-  sub_region = mongoengine.EnumField(required=True, choices=['Northern Africa', 'Eastern Africa', 'Southern Africa', 'Western Africa'])
+  sub_region = mongoengine.EnumField(required=True, enum=SubRegion)
   country = mongoengine.StringField(unique=True, required=True, max_length=50)
   recipes = mongoengine.EmbeddedDocumentListField(Recipe)
 
