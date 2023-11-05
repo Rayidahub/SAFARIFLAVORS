@@ -2,6 +2,7 @@
   Schemas for CRUD operations
 """
 from marshmallow import Schema, fields, validate, ValidationError
+from v1.enums import SubRegion
 
 
 # Admin Schema
@@ -112,7 +113,7 @@ class UpdateCountrySchema(Schema):
     Args:
       Schema (object): _description_
   """
-  sub_region = fields.Enum(required=True, choices=['Northern Africa', 'Eastern Africa', 'Southern Africa', 'Western Africa'])
+  sub_region = fields.Enum(required=True, enum=SubRegion)
   country = fields.String(required=True)
 
 
