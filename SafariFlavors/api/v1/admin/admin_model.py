@@ -6,7 +6,7 @@ class Admin(mongoengine.Document):
   """ Setup for admin user """
   email = mongoengine.StringField(required=True, unique=True)
   password = mongoengine.StringField(required=True)
-  status = mongoengine.BooleanField(required=True)
+  super_status = mongoengine.BooleanField(required=True)
 
   meta = {
     'db_alias': 'main',
