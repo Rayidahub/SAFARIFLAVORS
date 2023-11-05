@@ -5,8 +5,8 @@ from recipe import Recipe
 
 
 class Country(mongoengine.Document):
-  """"
-      This model is used to setup countries collection.
+  """
+    This model is used to setup countries collection.
   """
 
   created_at = mongoengine.DateTimeField(default=datetime.datetime.now())
@@ -17,6 +17,6 @@ class Country(mongoengine.Document):
   recipes = mongoengine.EmbeddedDocumentListField(Recipe)
 
   meta = {
-      'db_alias': 'main',
-      'collection': 'countries'
+    'db_alias': 'main',
+    'collection': 'countries'
   }

@@ -3,16 +3,16 @@ import datetime
 import mongoengine
 
 
-class Recipe(mongoengine.Document):
+class Recipe(mongoengine.EmbeddedDocument):
   """"
       This model is used to setup recipes collection.
   """
 
   created_at = mongoengine.DateTimeField(default=datetime.datetime.now())
   updated_at = mongoengine.DateTimeField(default=datetime.datetime.now())
-  name = mongoengine.StringField(required=True, unique=True, min_length=3, max_length=50)
-  description = mongoengine.StringField(required=True, min_length=10, max_length=150)
-  procedure = mongoengine.StringField(required=True, min_length=10, max_length=1000)
+  recipe_name = mongoengine.StringField(required=True, unique=True, min_length=3, max_length=50)
+  recipe_description = mongoengine.StringField(required=True, min_length=10, max_length=150)
+  recipe_procedure = mongoengine.StringField(required=True, min_length=10)
   recipe_image = mongoengine.ImageField(required=True)
 
   meta = {
