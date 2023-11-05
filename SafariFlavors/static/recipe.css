@@ -21,7 +21,10 @@ p{
     padding: 12px 2px;
     text-align: center;
 }
-
+.logo{
+    height: 40px;
+   
+}
 .site-title {
     float: left;
     margin: 0;
@@ -75,50 +78,47 @@ p{
     border: none;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    }
-.categories, .images {
-    width: 50%;
-    padding: 10px;
-}
+
 .category {
-    display: inline-block;
+    display: block;
     margin: 5px;
+    width: 100%;
 }
 .country {
     display: inline-block;
-    margin: 5px;
+  
 }
 .category-item, .country-item {
-        display: inline-block;
-        padding: 5px;
+        display: block;
+     
         cursor: pointer;
-}
-.food-container {
-    margin-left: 20px; 
+} 
+.lable{
+    color: #fff;
 }
 
-.food-image {
-    width: 200px; 
-    height: 200px; 
-}
-.food-images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px; 
-}
 .quote{
     text-align: center;
     margin: 20px 0;
     font-size: large;
     font-style: italic;
 }
+.close-add-food-form{
+    padding: 10px;
+    width: 50px;
+    background-color: aqua;
+    border-radius: 2px;
+}
+.add-food-form{
+    /* background-image: linear-gradient(to bottom, #4e54c8, #8f94fb); */
+    background-image: url('breadcumb1.jpg'), linear-gradient(to bottom, #07070f81, #00000098);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Adjust blend mode as needed */
 
+}
 .footer-grid {
-    background-color: #333;
+    
     color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

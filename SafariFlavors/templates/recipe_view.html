@@ -1,0 +1,75 @@
+
+{% extends 'main.html' %}
+
+{% block head %}
+<title>Safari Flavors | Recipes</title>
+{% endblock %}
+<body class="body-style">
+    {% block body %}
+    <header id="header">
+        <!-- Safari Logo --> 
+        <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for recipes...">
+            <button class="search-btn1" alt="Search"><i class='bx bx-search'></i></button>
+        </div>
+   
+        <!-- Website navigation -->
+        <ul class="nav-list">
+            <li class="nav-item"><a href="/"><h2>Home</h2></a></li>
+            <li class="nav-item"><a href="/recipe/Nigeria"><h2>Recipes For You</h2></a></li>
+            <li class="nav-item"><a href="/about"><h2>About Us</h2></a></li>
+        </ul>
+    </header>
+
+    <hr class="divider">
+
+    <hr class="divider">
+    
+
+    <div class="container">
+        <div class="categories">
+            <div class="category">
+                <div class="category-item">EAST AFRICA</div>
+                <div class="country">
+                    <div class="country-item">Kenya</div>
+                    <div class="country-item">Uganda</div>
+                    <div class="country-item">Tanzania</div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-item">WEST AFRICA</div>
+                <div class="country">
+                    <div class="country-item">Nigeria</div>
+                    <div class="country-item">Ghana</div>
+                    <div class="country-item">Senegal</div>
+                </div>
+            </div>
+        </div>
+
+        <h1>{{ food.name }}</h1>
+        <p>Category: {{ food.category }}</p>
+        <p>Country: {{ food.country }}</p>
+        <p>Description: {{ food.description }}</p>
+        <img src="{{ food.image }}" alt="{{ food.name }}">
+
+    <hr>
+
+    <footer class="footer-grid">
+        <div class="footer-about">
+            <h3 class="footer-title">About Us</h3>
+            <p class="footer-text">Safari Flavors Family.</p>
+        </div>
+        <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p class="footer-text">Email: safariflav@gmail.com</p>
+        </div>
+        <div class="footer-follow">
+            <h3 class="footer-title">Follow Us</h3>
+            <p class="footer-text">Facebook | Twitter | Instagram</p>
+        </div>
+        <div><p id="footer-copyright">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p></div>
+    </footer>
+{% endblock %}
