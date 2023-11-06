@@ -76,13 +76,12 @@ class TestFlaskApp(unittest.TestCase):
         self.assertIn(b'About Us', response.data)
 
     def test_country_recipe_route_nigeria(self):
-    response = self.app.get('/recipe/Nigeria')
-    self.assertEqual(response.status_code, 200)
+        response = self.app.get('/recipe/Nigeria')
+        self.assertEqual(response.status_code, 200)
 
-def test_country_recipe_route_kenya(self):
-    response = self.app.get('/recipe/Kenya')
-    self.assertEqual(response.status_code, 200)
-
+    def test_country_recipe_route_kenya(self):
+        response = self.app.get('/recipe/Kenya')
+        self.assertEqual(response.status_code, 200)
 
     def test_country_recipe_template_invalid_country(self):
         response = self.app.get('/recipe/InvalidCountryName')
