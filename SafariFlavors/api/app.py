@@ -4,7 +4,7 @@ from dotenv import load_dotenv, find_dotenv
 from os import environ
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
-from v1 import sf_views
+from v1.views import sf_views
 from v1.admin import sf_admin
 
 
@@ -39,7 +39,7 @@ db.init_app(app)
 @app.errorhandler(404)
 def not_found(error):
   """
-  404 Error response:
+    404 Error response:
       resource not found
   """
   return make_response(jsonify({'error': "Not found"}), 404)
