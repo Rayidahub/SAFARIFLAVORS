@@ -10,7 +10,6 @@ from v1.admin.admin_model import Admin
 from v1.data import Africa
 from v1.models.country import Country
 from v1.models.recipe import Recipe
-# import typing
 import bcrypt
 
 
@@ -37,7 +36,7 @@ def login():
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
 
 
@@ -91,7 +90,7 @@ def create_recipe():
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
 
 
@@ -134,7 +133,7 @@ def update_recipe():
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
 
 
@@ -166,7 +165,7 @@ def delete_recipe():
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
 
 
@@ -196,7 +195,7 @@ def update_country(id):
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
 
 
@@ -227,5 +226,5 @@ def delete_country(id):
 
   except ValidationError as err:
     return jsonify({'message': err.args[0]}), 400
-  except err:
+  except Exception as err:
     return jsonify({'message': err}), 500
