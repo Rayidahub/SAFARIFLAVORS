@@ -14,7 +14,7 @@ class Country(mongoengine.Document):
   updated_at = mongoengine.DateTimeField(default=datetime.datetime.now())
   region = mongoengine.StringField(default='Africa')
   sub_region = mongoengine.EnumField(required=True, enum=SubRegion)
-  country = mongoengine.StringField(unique=True, required=True, max_length=50)
+  country_name = mongoengine.StringField(unique=True, required=True, max_length=50)
   recipes = mongoengine.EmbeddedDocumentListField(Recipe)
 
   meta = {
