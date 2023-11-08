@@ -21,7 +21,8 @@
         <img src="{{ url_for('static', filename='logo1.png') }}" alt="page logo" class="logo">
         <!-- Search bar -->
         <form method="POST" action="/">
-            <input type="search" name="search_query" placeholder="Search for recipes here...">
+            <label for="searchbar">Search</label>
+            <input type="search" id="searchbar" name="search_query" placeholder="Search for recipes here...">
             <input type="submit" value="Search">
         </form>
     
