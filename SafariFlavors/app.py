@@ -3,7 +3,7 @@ from flask_mongoengine import MongoEngine
 from mongoengine import connect, Document, StringField, ReferenceField, ListField
 from flask_admin import Admin
 from flask_admin.contrib.mongoengine import ModelView
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+# from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from models.schema import Region, SubRegion, Country, Recipe
 from models.user import User
 from models.model import Food
@@ -48,18 +48,18 @@ admin.add_view(ModelView(Region))
 admin.add_view(ModelView(SubRegion))
 admin.add_view(ModelView(Country))
 
-# Initialize Flask-Login
-login_manager = LoginManager()
-login_manager.init_app(app)
+# # Initialize Flask-Login
+# login_manager = LoginManager()
+# login_manager.init_app(app)
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-# Define routes and views
-@login_manager.user_loader
-def load_user(user_id):
-    return User.objects(pk=user_id).first()
+# # Define routes and views
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.objects(pk=user_id).first()
 
 @app.route("/")
 def home():
@@ -82,6 +82,7 @@ def country_recipe(country_name):
     else:
         # Handle the case where the country is not found
         return render_template('recipe.html', country_name=country_name), 404
+
 @app.route('/recipe/submit-food', methods=['POST'])
 def submit_food():
     # Get data from the form
@@ -129,22 +130,23 @@ def other_page():
 def success():
     return render_template('recipe.html')
     
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user = User.objects(username=username).first()
-        if user and user.password == password:
-            login_user(user)
-            return redirect(url_for('admin.index'))
-    return render_template('login.html')    
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#         user = User.objects(username=username).first()
+#         if user and user.password == password:
+#             login_user(user)
+#             return redirect(url_for('admin.index'))
+#     return render_template('login.html')    
 
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('login'))
+
+# @app.route('/logout')
+# # @login_required
+# def logout():
+#     logout_user()
+#     return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
