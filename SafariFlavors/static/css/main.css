@@ -15,8 +15,9 @@
 :root {
     --background-color-light: rgb(199, 190, 190);
     --color-orange: orange;
+    --button-hover: rgb(255, 140, 0);
     --nav-header-color: rgb(255, 102, 0);
-    --menu-btn-transition: 0.1s ease-out;
+    --btn-transition: 0.1s ease-out;
     --search-background-color: rgb(249, 238, 216);
     --outline: 1px solid black;
 }
@@ -86,6 +87,12 @@ hr {
     text-decoration: none;
 }
 
+.nav-item:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+    transition: var(--btn-transition);
+}
+
 .nav-item ::before {
     content: '';
     position: absolute;
@@ -135,7 +142,17 @@ input[type='search']:focus, input[type='submit']:focus {
 
 input[type='submit'] {
     width: 20%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     background-color: var(--color-orange);
+    border: none;
+}
+
+input[type='submit']:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+    transition: var(--btn-transition);
+    background-color: var(--button-hover);
     border: none;
 }
 
