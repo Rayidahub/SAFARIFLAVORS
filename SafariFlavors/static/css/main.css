@@ -15,6 +15,10 @@
 :root {
     --background-color-light: rgb(199, 190, 190);
     --color-orange: orange;
+    --nav-header-color: rgb(255, 102, 0);
+    --menu-btn-transition: 0.1s ease-out;
+    --search-background-color: rgb(249, 238, 216);
+    --outline: 1px solid black;
 }
 
 
@@ -28,10 +32,13 @@ html {
 body {
     background-color: var(--background-color-light);
 }
+:focus {
+    outline: var(--outline);
+}
 
 
 
-/* HEADER SETION */
+/* --------- HEADER SETION --------------------- */
 #header {
     display: flex;
     justify-content: space-between;
@@ -44,12 +51,15 @@ body {
     width: 100%;
 }
 
-#header .logo {
+.logo-container {
     position: relative;
-    top: 13%;
-    left: 3%;
-    width: auto;
-    height: 80%;
+    width: 12%;
+    margin-left: 10px;
+}
+
+#header a .logo {
+    width: 100%;
+    height: 100%;
 }
 
 hr {
@@ -72,10 +82,62 @@ hr {
 }
 
 .nav-item a {
-    color: var(--color-orange);
+    color: var(--nav-header-color);
     text-decoration: none;
 }
 
+.nav-item ::before {
+    content: '';
+    position: absolute;
+    transform: translateY(2.2ex);
+    background-color: var(--nav-header-color);
+    width: 0;
+    height: 0.2rem;
+    transition: .3s ease-out;
+}
+
+.nav-item:first-child a:hover::before {
+    width: 5.2ch;
+}
+
+.nav-item:nth-child(2) a:hover::before {
+    width: 7.2ch;
+}
+
+.nav-item:last-child a:hover::before {
+    width: 8.2ch;
+}
+
+form {
+    position: relative;
+    top: 20%;
+    display: flex;
+    width: 30%;
+}
+
+/* Form */
+form label {
+    display: none;
+}
+
+input[type='search'] {
+    width: 100%;
+    height: 2.5em;
+    background-color: var(--search-background-color);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border: 1px solid var(--search-background-color);
+}
+
+input[type='search']:focus, input[type='submit']:focus {
+    outline: 1px solid black;
+}
+
+input[type='submit'] {
+    width: 20%;
+    background-color: var(--color-orange);
+    border: none;
+}
 
 /* FOOTER */
 footer{
