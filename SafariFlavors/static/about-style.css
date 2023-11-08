@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif; 
 }
 body {
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fshef.com%2Fhomemade-food%2Fafrican-regional-cuisines%2Feast-african-food%2F&psig=AOvVaw0vMY16swMnt0B_u3NNnMOL&ust=1699028720885000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDHiq3dpYIDFQAAAAAdAAAAABAE');
-    background-size: cover;
+    background-image: url('/SafariFlavors/static/1.jpg');
+    background-size: contain;
     opacity: 0.9;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -70,7 +70,14 @@ p{
     padding:10px 10px ;
     border: none;
 }
-
+.search-btn1{
+    border-radius: 0 50px 50px 0;
+    margin-left: -6px;
+    height: 40px;
+    /* padding: 10px 10px; */
+    background-color: rgb(243, 238, 235);
+    border: none;
+}
 .search-btn{
     border-radius: 0 50px 50px 0;
     margin-left: -6px;
@@ -91,29 +98,99 @@ i{
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px; 
+   
 }
 
-.image {
+.cover-image {
     width: 100%;
     height: 600px;
-    object-fit:cover;
+    
 }
+.form-style{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0, 0, 0.5 #fff ;
+}
+.main{
+    
+    /* background: linear-gradient(to bottom, #1f1f1f, #31313100); */
+    background-image: linear-gradient(to bottom, #4e54c8, #8f94fb);
+    background-image: url('/static/1.jpg'), linear-gradient(to bottom, #07070f, #8f94fb);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Adjust blend mode as needed */
 
+}
+.form{
+    display: flex;
+}
 .content {
-    width: 80%;
+    
+    display: block;
     margin-top: 20px;
     text-align: justify;
-    border:2px solid grey;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid rgb(48, 48, 48);
     padding: 20px 30px;
     border-radius: 40px;
     font-size: 20px;
+    background-color: rgba(206, 147, 38, 0.692);
+}
+/* styles.css */
+
+form {
+    display: block;
+    max-width: 400px;
+    margin: 10px;
+    /* background-color:  rgb(206, 147, 38); */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
 }
 
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4e54c8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(30, 255, 0);
+}
+.input-email{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+/*
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -128,8 +205,9 @@ i{
     justify-content: center;
     align-items: center;
 }
-.contact{
+ .contact{
     display: flex;
+    float: left;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -155,9 +233,9 @@ i{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 100%;
     margin-top: 20px;
-    background-color: #d46c26;
+    background-color: #5e270359;
     padding: 30px;
 }
 
@@ -166,7 +244,7 @@ i{
     padding: 10px 20px;
     border: none;
     border-radius: 30px;
-}
+} */
 .subscribe-btn{
     background-color: rgb(224, 5, 5);
     color: #dfd1d1;
@@ -179,7 +257,7 @@ i{
 
 }
 .footer-grid {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

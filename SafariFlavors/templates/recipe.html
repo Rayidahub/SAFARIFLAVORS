@@ -7,11 +7,12 @@
 <body class="body-style">
     {% block body %}
     <header id="header">
-        <h1 class="site-title">Safari Flavors</h1>
+         <!-- Safari Logo --> 
+         <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
         <!-- Search bar -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search for recipes...">
-            <button class="search-btn" alt="Search"><i class='bx bx-search'></i></button>
+            <button class="search-btn1" alt="Search"><i class='bx bx-search'></i></button>
         </div>
    
         <!-- Website navigation -->
@@ -22,9 +23,6 @@
         </ul>
     </header>
 
-    <hr class="divider">
-
-    <hr class="divider">
     
 
     <div class="container">
@@ -49,22 +47,66 @@
         </div>
 
         <div class="food-container">
-            <div class="food-container">
-                <p>Recipes > Browse</p>
-                <div class="food-images">
-                    <!-- Images here -->
-                    <img class="food-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Injera_with_eight_kinds_of_stew.jpg" alt="Ijera">
-                    <img class="food-image" src="https://images.squarespace-cdn.com/content/v1/5e718d41db8d410d393c97e2/1619019439594-I67Y50O71YI5MDN1ZL7V/Tawakal+East+African+Restaurant_2.jpg" alt="pasta-pilau">
-                    <img class="food-image" src="https://assets.rebelmouse.io/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmVzX2F0IjoxNjk5MTg5Mjg3LCJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjc3NTQ2My9vcmlnaW4uanBnIn0.edGA6iTaqV7LXRvhkw6nvBVcQm8mPwxfsWmQYqE13iU/img.jpg" alt="mashed">
-                    <img class="food-image" src="https://www.chefspencil.com/wp-content/uploads/UGALI-2.jpg" alt="meat-mash">
-                    <img class="food-image" src="https://www.sorghumcheckoff.com/wp-content/uploads/2021/11/East-African-Bowl-00.jpg" alt="meat">
-                    <img class="food-image" src="https://img.atlasobscura.com/Nk_KcXUBq7j4zbd1VssaP6iM7kM4w16AB8UPAFOLZXU/rs:fill:580:580:1/g:ce/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3RoaW5n/X2ltYWdlcy8zYjlh/ZGRlMC03Yjg2LTRl/ZTMtOGZkMS0zMjE3/MDBkZmI1YTQ5ZDdk/YzliNzI4MmNkNDRh/MTlfMzczODEzODY0/OV9lZjc3OTJmMWQ4/X28uanBn.jpg" alt="Andazi">
-                    <img class="food-image" src="https://media-cdn2.greatbritishchefs.com/media/zcfc2vp5/img16470.jpg" alt="cuisine">
-                    <img class="food-image" src="https://ajojesnacks.com/wp-content/uploads/2023/02/westafricanfood1-1080x675.jpeg" alt="pan-pilau">
-                    <img class="food-image" src="https://images.squarespace-cdn.com/content/v1/63b25619bc6cb02b178c8b13/91a4608d-c86e-4a24-9215-44cfabe831f5/maxresdefault.jpg" alt="naija-andazi">
-                    <img class="food-image" src="https://c.ndtvimg.com/2023-03/0m65kep_samosa_625x300_10_March_23.jpg" alt="samosa">
-                    <img class="food-image" src="https://www.allrecipes.com/thmb/-65kjnHo27H_nnn36EVVsEJM6KQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/12978-Egusi-Soup-ddmfs-026-4x3-1-e662479f824b4b54bdc25165ad41c6b6.jpg" alt="Egusi">
-                    <img class="food-image" src="https://www.africanbites.com/wp-content/uploads/2022/03/a-plate-of-egusi-soup-served-with-plantains-copy.jpg" alt="soup">
+           
+                <div class="menu2">
+                    <!--  Division due to buttom line-->
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="info">
+                        <div class="col01"> </div>
+                            <div class="title"> 
+                                <p>Hello</p>
+                                <a href="{{ url_for('static', filename='') }}">
+                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
+                                </a>
+                            </div>
+                    </div> 
+                
+            </div>
+                      
                 </div>
         </div>
 
@@ -75,15 +117,13 @@
                 <p id="food-description" class="food-description"></p>
             </div>
         </div>
-        <h3 class="quote">Instead of going out to dinner, buy good food. Cooking at home shows such affection. In a bad economy, it's more important to make yourself feel good.
-
-            ~~ Ina Garten</h3>
-    
-        <div class="add-food-button" onclick="document.getElementById('addFoodForm').style.display='block'">Add Food</div>
+            <div class="add-food-button" onclick="document.getElementById('addFoodForm').style.display='block'">Add Food</div>
 
         <div id="addFoodForm" class="add-food-form">
-            <h2 class="form-title">Add Food</h2>
-            <form action="submit-food" method="POST" class="form-style">
+            <h3 class="quote">Instead of going out to dinner, buy good food. Cooking at home shows such affection. In a bad economy, it's more important to make yourself feel good.
+
+            ~~ Ina Garten</h3>
+            <form method="POST" action="/recipe/submit-food" enctype="multipart/form-data" class="form-style">
                 <label for="food-name" class="form-label    ">Food Name:</label><br>
                 <input type="text" id="food-name" name="food-name" class="form-input"><br>
                 <label for="food-category" class="form-label">Food Category:</label><br>
@@ -102,6 +142,10 @@
                 </select><br>
                 <label for="food-description" class="form-label">Food Description:</label><br>
                 <textarea id="food-description" name="food-description" class="form-textarea"></textarea><br>
+                <label for="food-description" class="form-label">Food Ingredient:</label><br>
+                <textarea id="food-ingredient" name="food-ingredient" class="form-textarea"></textarea><br>
+                <label for="food-description" class="form-label">Cooking Instruction:</label><br>
+                <textarea id="food-intructions" name="food-intructions" class="form-textarea"></textarea><br>
                 <label for="food-image" class="form-label">Food Image:</label><br>
                 <input type="file" id="food-image" name="food-image" class="form-input"><br>
                 <input type="submit" value="Submit" class="form-submit">
@@ -111,7 +155,7 @@
     
     </div>
 
-    <hr>
+
 
     <footer class="footer-grid">
         <div class="footer-about">

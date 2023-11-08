@@ -6,11 +6,12 @@
 
 {% block body %}
     <header id="header">
-        <h1 class="site-title">Safari Flavors</h1>
+         <!-- Safari Logo --> 
+         <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
         <!-- Search bar -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search for recipes...">
-            <button class="search-btn" alt="Search"><i class='bx bx-search'></i></button>
+            <button class="search-btn1" alt="Search"><i class='bx bx-search'></i></button>
         </div>
    
         <!-- Website navigation -->
@@ -21,36 +22,41 @@
         </ul>
     </header>
 
-    <hr class="divider">
+
 
 <div class="container">
-    <img src="https://via.placeholder.com/150" alt="About Us" class="image">
+    <img src="{{ url_for('static', filename='3.jpg') }}" alt="Click me" class="cover-image">
+    <div class="main">
     <div class="content">
         <p>Our website is dedicated to providing the best recipes from around Africa. We understand that food brings people together and this is our mission to bring the world closer through food.</p>
 
         <p>We are committed to ensuring our recipes are simple to follow, and use ingredients that are easily accessible. We hope that our website brings you joy, whether you are looking for a new recipe or seeking inspiration.</p>
     </div>
 
-    <div class="contact-form">
-        <h2>Contact Us</h2>
+    
+
+    <div class="newsletter-section"><div class="contact-form">
+       <div class="form">
         <form>
+             <h2>Contact Us</h2>
             <input type="text" name="name" placeholder="Your Name">
             <textarea name="message" rows="5" placeholder="Your Message"></textarea>
             <input type="submit" value="Submit">
         </form>
-    </div>
-
-    <div class="newsletter-section">
-        <h2>Subscribe to Our Newsletter</h2>
+   
+        
         <form>
-            <input type="email" name="email" placeholder="Your Email">
+            <h2>Subscribe to Our Newsletter</h2>
+            <input type="email" name="email" placeholder="Your Email" class="input-email">
             <input type="submit" value="Subscribe">
         </form>
     </div>
+    </div>
+    
 </div>
 
 <hr>
-
+</div>
 <footer class="footer-grid">
     <div class="footer-about">
         <h3 class="footer-title">About Us</h3>
