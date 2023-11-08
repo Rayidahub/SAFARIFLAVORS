@@ -4,7 +4,6 @@ from flask_mongoengine import MongoEngine
 from mongoengine import connect, Document, StringField, ReferenceField, ListField
 from flask_admin import Admin
 from flask_admin.contrib.mongoengine import ModelView
-# from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from models.schema import Region, SubRegion, Country, Recipe
 from models.user import User
 from models.model import Food
@@ -26,24 +25,12 @@ API_KEY = os.getenv('API')
 # Initialize the MongoEngine
 db = MongoEngine(app)
 
-# Define the Food model
-class Food(db.Document):
-    name = db.StringField()
-    category = db.StringField()
-    country = db.StringField()
-    description = db.StringField()
-    image = db.StringField()
-
-
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure secret key
 
 # Configure the uploads folder
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'static')
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png', 'gif'}
-
-# Set up the configuration for your MongoDB database
-
 
 # Connect to MongoDB using mongoengine
 # Create the Flask-Admin instance
@@ -55,24 +42,12 @@ admin.add_view(ModelView(Region))
 admin.add_view(ModelView(SubRegion))
 admin.add_view(ModelView(Country))
 
-# # Initialize Flask-Login
-# login_manager = LoginManager()
-# login_manager.init_app(app)
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-# # Define routes and views
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.objects(pk=user_id).first()
-
-@app.route('/home', methods=['GET'])
-def home():
-    # Render the main page with empty recipe list and search query
-    return render_template('home.html', recipes=[], search_query='')
-
+# Implement search through third party api
 def search_recipes(query):
     url = f'https://api.spoonacular.com/recipes/complexSearch'
     params = {
@@ -96,12 +71,14 @@ def search_recipes(query):
     return []
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def display_recipes():
     if request.method == 'POST':
         # If a form is submitted
         query = request.form.get('search_query', '')
         # Perform a search for recipes with the given query
         recipes = search_recipes(query)
+        print(recipes)
         # Render the main page with the search results and the search query
         return render_template('home.html', recipes=recipes, search_query=query)
     

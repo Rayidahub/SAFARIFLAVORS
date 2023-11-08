@@ -1,0 +1,94 @@
+
+body {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fshef.com%2Fhomemade-food%2Fafrican-regional-cuisines%2Feast-african-food%2F&psig=AOvVaw0vMY16swMnt0B_u3NNnMOL&ust=1699028720885000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDHiq3dpYIDFQAAAAAdAAAAABAE');
+    background-size: cover;
+    opacity: 0.9;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+h1 {
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+
+.form-label{
+    font-weight: bold;
+    color:  #fff;
+}
+
+#main-cotent ul {
+    list-style: none;
+    padding: 0;
+}
+#main-content ul li {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 200px;
+}
+
+.recipe-title {
+    font-size: 16px;
+    line-height: 1.2;
+    max-height: 3.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+}
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.search-input {
+    width: 200px;
+    padding: 10px 10px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    border-radius: 50px 0px 0 50px ;
+    padding:10px 10px ;
+    border: none;
+}
+
+.search-btn{
+    border-radius: 0px 50px 50px 0px;
+    margin-left: -6px;
+    padding: 10px 10px;
+    background-color: rgb(243, 238, 235);
+    border: none;
+}
+
+#main-content {
+    display: flex;
+}
+
+.quote {
+    font-style: italic;
+    width: auto;
+    color: #fff;
+    background-color: #07070f;
+}
+

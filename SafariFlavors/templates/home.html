@@ -1,28 +1,11 @@
 {% extends 'main.html' %}
 
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 <title>Safari Flavors | Home</title>
 {% endblock %}
 
     {% block body %}
-    <!-- Header area -->
-    <header id="header">
-         <!-- Safari Logo --> 
-         <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
-        <!-- Search bar -->
-        <form method="POST" action="/">
-            <input type="text" name="search_query" placeholder="Search for recipes here...">
-            <input type="submit" value="Search">
-        </form>
-   
-        <!-- Website navigation -->
-        <ul class="nav-list">
-            <li class="nav-item"><a href="/"><h2>Home</h2></a></li>
-            <li class="nav-item"><a href="/recipe/Nigeria"><h2>Recipes For You</h2></a></li>
-            <li class="nav-item"><a href="/about"><h2>About Us</h2></a></li>
-        </ul>
-    </header>
-
     <h1> Safari Flavors !</h1>
   
     <p>Browse available categories by keywords...</p>
@@ -35,12 +18,12 @@
         <h2>Results for "{{ search_query }}"</h2>
         <ul>
         {% for recipe in recipes %}
-        <li>
-            <h3 class="recipe-title">{{ recipe.title }}</h3>
-            {% if recipe.image %}
-            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-            {% endif %}
-            <a href="{{ url_for('view_recipe', recipe_id=recipe.id, search_query=search_query) }}">View</a>
+            <li>
+                <h3 class="recipe-title">{{ recipe.title }}</h3>
+                {% if recipe.image %}
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                {% endif %}
+                <a href="{{ url_for('view_recipe', recipe_id=recipe.id, search_query=search_query) }}">View</a>
             </li>
         {% endfor %}
         </ul>
@@ -52,22 +35,4 @@
     </main>
 
     <h3 class="quote">One cannot think well, love well, sleep well, if one has not dined well.</h3>
-
-    
-
-    <footer class="footer-grid">
-        <div class="footer-about">
-            <h3 class="footer-title">About Us</h3>
-            <p class="footer-text">Safari Flavors Family.</p>
-        </div>
-        <div class="footer-contact">
-            <h3 class="footer-title">Contact Us</h3>
-            <p class="footer-text">Email: safariflav@gmail.com</p>
-        </div>
-        <div class="footer-follow">
-            <h3 class="footer-title">Follow Us</h3>
-            <p class="footer-text">Facebook | Twitter | Instagram</p>
-        </div>
-        <div><p id="footer-copyright">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p></div>
-    </footer>
 {% endblock %}

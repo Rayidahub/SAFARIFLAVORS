@@ -2,28 +2,11 @@
 {% extends 'main.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='recipe.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recipe.css') }}">
 <title>{{ recipe.title }}</title>
 {% endblock %}
 <body class="body-style">
     {% block body %}
-    <header id="header">
-         <!-- Safari Logo --> 
-         <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
-        <!-- Search bar -->
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for recipes...">
-            <button class="search-btn1" alt="Search"><i class='bx bx-search'></i></button>
-        </div>
-   
-        <!-- Website navigation -->
-        <ul class="nav-list">
-            <li class="nav-item"><a href="/home"><h2>Home</h2></a></li>
-            <li class="nav-item"><a href="/recipe/Nigeria"><h2>Recipes For You</h2></a></li>
-            <li class="nav-item"><a href="/about"><h2>About Us</h2></a></li>
-        </ul>
-    </header>
-
     <!-- Recipe details  that were searched for by the user-->
     <div class="recipe-details">
         <h1>{{ recipe.title }}</h1>
