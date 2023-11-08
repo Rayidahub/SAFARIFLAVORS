@@ -4,23 +4,16 @@
 <title>Safari Flavors | Home</title>
 {% endblock %}
 
-<body id="body">
     {% block body %}
-    <!-- Preloader
-    <div id="preloader" class="preloader">
-        <i class="circle-preloader"></i>
-        <img src="img/core/preloader.ico" alt="">
-    </div> -->
-
     <!-- Header area -->
     <header id="header">
          <!-- Safari Logo --> 
          <img src="{{ url_for('static', filename='logo1.png') }}" alt="Click me" class="logo">
         <!-- Search bar -->
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for recipes...">
-            <button class="search-btn1" alt="Search"><i class='bx bx-search'></i></button>
-        </div>
+        <form method="POST" action="/">
+            <input type="text" name="search_query" placeholder="Search for recipes here...">
+            <input type="submit" value="Search">
+        </form>
    
         <!-- Website navigation -->
         <ul class="nav-list">
@@ -30,97 +23,31 @@
         </ul>
     </header>
 
+    <h1> Safari Flavors !</h1>
   
-
+    <p>Browse available categories by keywords...</p>
+    
     <main id="main-content">
         <!-- Categories to be delayed -->
-        <div class="categories">
-            <div class="category" id="ea">
-                <h2 class="category-title">Eastern Africa</h2>
-                <img class="category-image" src="https://afrotasty.files.wordpress.com/2020/01/east-2-east-african-food-platter_chakula-banner-1024x597-1.png?w=750" alt="Eastern Africa">
-                <p>An East African Platter</p>
-            </div>
-
-            <div class="category" id="wa">
-                <h2 class="category-title">Western Africa</h2>
-                <img class="category-image" src="https://thumbor.bigedition.com/nyama-choma-one-of-the-most-delicious-african-food-dishes/R9LoGgHT6_eXHikjd1Jmm41fdrw=/77x0:1206x846/480x360/filters:format(webp):quality(80)/granite-web-prod/ea/b4/eab41ed11cd64a4f9bc30c6d02bca118.jpeg" alt="Western Africa">
-                <p>A West African Platter</p>
-            </div>
-        </div>
-
-        <div class="menu2">
-     
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            </div>
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            </div>
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            </div>
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            </div>
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            </div>
-            <div class="info">
-                <div class="col01"> </div>
-                    <div class="title"> 
-                        <p>Hello</p>
-                        <a href="{{ url_for('static', filename='') }}">
-                            <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                        </a>
-                    </div>
-            <
-            
-            
-
-                
-        </div> 
-        
-    </div>
-              
-        </div>
-
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="food-name" class="food-name"></h2>
-                <p id="food-description" class="food-description"></p>
-            </div>
-        </div>
+    
+         <!-- Check of recipes are available-->
+        {% if recipes%}
+        <h2>Results for "{{ search_query }}"</h2>
+        <ul>
+        {% for recipe in recipes %}
+        <li>
+            <h3 class="recipe-title">{{ recipe.title }}</h3>
+            {% if recipe.image %}
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            {% endif %}
+            <a href="{{ url_for('view_recipe', recipe_id=recipe.id, search_query=search_query) }}">View</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <!-- If no recipes are found -->
+        {% else %}
+        <p>Sorry the recipe you are looking for is unavailable at the moment.</p>
+        {% endif %}
 
     </main>
 

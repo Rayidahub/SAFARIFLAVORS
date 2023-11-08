@@ -24,25 +24,66 @@ body {
     background-size: cover;
     opacity: 0.9;
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 40px;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: center;
 }
 p{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
 }
+h1 {
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+
 .form-label{
-    
     font-weight: bold;
     color:  #fff;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 200px;
+}
 
-.site-title {
-    float: left;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 2px;
+    text-align: center;
+}
+
+.recipe-title {
+    font-size: 16px;
+    line-height: 1.2;
+    max-height: 3.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+}
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: underline;
 }
 
 .nav-list {
@@ -53,10 +94,6 @@ p{
     margin-top: 10px;
 }
 
-.nav-item img {
-    width: 50px; 
-    height: 50px; 
-}
 .nav-item {
     margin: 0 10px;
 }
@@ -96,144 +133,12 @@ p{
     display: flex;
 }
 
-.categories{
-    display: flex;
-    width: 500px;
-    margin-top: 0px;
-}
-
-.category-image{
-    text-align: center;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    max-width: 100%;
-}
-.category-title {
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-    padding: 10px ; 
-}
-
-.category, .food-container {
-    border: 1px solid black;
-}
-
-.info{
-    padding-right: 30px;
-}
-.image {
-  
-    margin-right: 20px;
-    width: 300px;
-    height: 300px;
-}
-.menu2 {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: #aaa;    
-    width: fit-content;
-    background-image: linear-gradient(to bottom, #4e54c8, #8f94fb);
-    background-image: url('/static/2.jpg'), linear-gradient(to bottom, #07070f, #8f94fb);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply; /* Adjust blend mode as needed */
-
-}
-
-.col01 h3{
-    display: block;
-    color: #fff;
-}
-.title{
-    margin-right: 40px;
-    margin-left: 40px;
-    display: flex;
-    font-family: youtube-font;
-    font-weight: bold;
-    width: 200px;
-    flex-direction: column;
-}
-.title p{
-    
-    color: #fff;
-}
-.col01{
-    display: flex;
-    /* border: 2px solid rgb(0, 255, 42);  */
-    width: 10px;
-    padding: auto;
-    border-radius: 20px;
-    height: 0px;
-    background: url("./Celebration.webp");
-    /* background-size: cover; */
-    flex-direction: column-reverse;
-}
-
 .quote {
     font-style: italic;
     width: auto;
     color: #fff;
     background-color: #07070f;
-   
 }
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-
-
-.food-image {
-    width: 200px; 
-    height: 200px; 
-}
-.food-images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px; 
-}
-.quote{
-    text-align: center;
-    margin: 20px 0;
-    font-size: large;
-    font-style: italic;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 footer{
     left: 0;

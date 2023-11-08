@@ -7,6 +7,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
 p{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
@@ -21,14 +22,9 @@ p{
     padding: 12px 2px;
     text-align: center;
 }
+
 .logo{
     height: 40px;
-   
-}
-.site-title {
-    float: left;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-list {
@@ -43,6 +39,7 @@ p{
     width: 50px; 
     height: 50px; 
 }
+
 .nav-item {
     margin: 0 10px;
 }
@@ -78,30 +75,10 @@ p{
     border: none;
 }
 
-
-.category {
-    display: block;
-    margin: 5px;
-    width: 100%;
-}
-.country {
-    display: inline-block;
-  
-}
-.category-item, .country-item {
-        display: block;
-     
-        cursor: pointer;
-} 
-.lable{
-    color: #fff;
-}
-
-.quote{
+body {
     text-align: center;
-    margin: 20px 0;
-    font-size: large;
-    font-style: italic;
+    margin: 40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .close-add-food-form{
     padding: 10px;
@@ -115,43 +92,44 @@ p{
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply; /* Adjust blend mode as needed */
-
-}
-.footer-grid {
-    
-    color: #fff;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 20px 0;
-    text-align: center;
 }
 
-.footer-title {
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    text-align: left;
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.recipe-details {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: left;
     margin-bottom: 10px;
 }
 
-.footer-about,
-.footer-contact,
-.footer-follow {
-    grid-column: span 1;
-}
-
-.footer-text {
-    grid-column: 1 / span 3;
-    text-align: center;
-    
-}
-
-footer{
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #f5f5dc; 
-    min-height: auto;
-}
-footer>p{
-    position: relative;
-    text-align: center;
-    margin: auto;
+.ingredient-list, .instruction-list {
+    text-align: left;
 }
