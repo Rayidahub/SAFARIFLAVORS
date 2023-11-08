@@ -22,6 +22,7 @@ body {
 
 #main-content {
     display: flex;
+    margin-top: 5rem;
 }
 
 .quote {
