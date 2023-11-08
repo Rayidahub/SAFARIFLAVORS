@@ -2,7 +2,8 @@
 {% extends 'main.html' %}
 
 {% block head %}
-<title>Safari Flavors | Recipes</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='recipe.css') }}">
+<title>{{ recipe.title }}</title>
 {% endblock %}
 <body class="body-style">
     {% block body %}
@@ -17,159 +18,38 @@
    
         <!-- Website navigation -->
         <ul class="nav-list">
-            <li class="nav-item"><a href="/"><h2>Home</h2></a></li>
+            <li class="nav-item"><a href="/home"><h2>Home</h2></a></li>
             <li class="nav-item"><a href="/recipe/Nigeria"><h2>Recipes For You</h2></a></li>
             <li class="nav-item"><a href="/about"><h2>About Us</h2></a></li>
         </ul>
     </header>
 
-    
+    <!-- Recipe details  that were searched for by the user-->
+    <div class="recipe-details">
+        <h1>{{ recipe.title }}</h1>
 
-    <div class="container">
-        <div class="categories">
-            <div class="category">
-                <div class="category-item">EAST AFRICA</div>
-                <div class="country">
-                    <div class="country-item">Kenya</div>
-                    <div class="country-item">Uganda</div>
-                    <div class="country-item">Tanzania</div>
-                </div>
-            </div>
+        <!-- Display the recipe image if available -->
+        {% if recipe.image %}
+        <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        {% endif %}
 
-            <div class="category">
-                <div class="category-item">WEST AFRICA</div>
-                <div class="country">
-                    <div class="country-item">Nigeria</div>
-                    <div class="country-item">Ghana</div>
-                    <div class="country-item">Senegal</div>
-                </div>
-            </div>
-        </div>
+        <!-- Ingredients section -->
+        <h2 class="section-title">Ingredients</h2>
+        <!-- Create an unordered list for displaying the ingredients -->
+        <ul class="ingredient-list">
+            <!-- Loop through each ingredient in the recipe's extendedIngredients -->
+            {% for ingredient in recipe.extendedIngredients %}
+            <li>{{ ingredient.original }}</li>
+            {% endfor %}
+        </ul>
 
-        <div class="food-container">
-           
-                <div class="menu2">
-                    <!--  Division due to buttom line-->
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div>
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div>
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div>
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div>
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div>
-                    <div class="info">
-                        <div class="col01"> </div>
-                            <div class="title"> 
-                                <p>Hello</p>
-                                <a href="{{ url_for('static', filename='') }}">
-                                    <img src="{{ url_for('static', filename='Nyamchom.jpg') }}" alt="Click me" class="image">
-                                </a>
-                            </div>
-                    </div> 
-                
-            </div>
-                      
-                </div>
-        </div>
-
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="food-name" class="food-name"></h2>
-                <p id="food-description" class="food-description"></p>
-            </div>
-        </div>
-            <div class="add-food-button" onclick="document.getElementById('addFoodForm').style.display='block'">Add Food</div>
-
-        <div id="addFoodForm" class="add-food-form">
-            <h3 class="quote">Instead of going out to dinner, buy good food. Cooking at home shows such affection. In a bad economy, it's more important to make yourself feel good.
-
-            ~~ Ina Garten</h3>
-            <form method="POST" action="/recipe/submit-food" enctype="multipart/form-data" class="form-style">
-                <label for="food-name" class="form-label    ">Food Name:</label><br>
-                <input type="text" id="food-name" name="food-name" class="form-input"><br>
-                <label for="food-category" class="form-label">Food Category:</label><br>
-                <select id="food-category" name="food-category" class="form-select">
-                    <option value="EAST AFRICA">EAST AFRICA</option>
-                    <option value="WEST AFRICA">WEST AFRICA</option>
-                </select><br>
-                <label for="food-country" class="form-label">Food Country:</label><br>
-                <select id="food-country" name="food-country" class="form-select">
-                    <option value="Kenya">Kenya</option>
-                    <option value="Uganda">Uganda</option>
-                    <option value="Tanzania">Tanzania</option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Senegal">Senegal</option>
-                </select><br>
-                <label for="food-description" class="form-label">Food Description:</label><br>
-                <textarea id="food-description" name="food-description" class="form-textarea"></textarea><br>
-                <label for="food-description" class="form-label">Food Ingredient:</label><br>
-                <textarea id="food-ingredient" name="food-ingredient" class="form-textarea"></textarea><br>
-                <label for="food-description" class="form-label">Cooking Instruction:</label><br>
-                <textarea id="food-intructions" name="food-intructions" class="form-textarea"></textarea><br>
-                <label for="food-image" class="form-label">Food Image:</label><br>
-                <input type="file" id="food-image" name="food-image" class="form-input"><br>
-                <input type="submit" value="Submit" class="form-submit">
-            </form>
-            <div class="close-add-food-form" onclick="document.getElementById('addFoodForm').style.display='none'">Close</div>
-        </div>
-    
+        <!-- Instructions Section that guides preparation -->
+        <h2 class="section-title">Instructions</h2>
+        <ol class="instruction-list">
+            {% for step in recipe.analyzedInstructions[0].steps %}
+            <li>{{ step.step }}</li>
+            {% endfor %}
+        </ol>
+        <a href="/?search_query={{ search_query }}">Back to search results.</a>
     </div>
-
-
-
-    <footer class="footer-grid">
-        <div class="footer-about">
-            <h3 class="footer-title">About Us</h3>
-            <p class="footer-text">Safari Flavors Family.</p>
-        </div>
-        <div class="footer-contact">
-            <h3 class="footer-title">Contact Us</h3>
-            <p class="footer-text">Email: safariflav@gmail.com</p>
-        </div>
-        <div class="footer-follow">
-            <h3 class="footer-title">Follow Us</h3>
-            <p class="footer-text">Facebook | Twitter | Instagram</p>
-        </div>
-        <div><p id="footer-copyright">&copy; <script>document.write(new Date().getFullYear());</script> Safari Flavors. All rights reserved.</p></div>
-    </footer>
 {% endblock %}
