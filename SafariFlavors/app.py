@@ -14,16 +14,16 @@ load_dotenv(find_dotenv('safari.env'))
 
 
 app = Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {
-    'db': 'recipe_db',
-    'host': 'mongodb://localhost:27017/recipe_db'   
-}
+# app.config['MONGODB_SETTINGS'] = {
+#     'db': 'recipe_db',
+#     'host': 'mongodb://localhost:27017/recipe_db'   
+# }
 
 # Set up the configuration for your API key from https://spoonacular.com/food-api
 API_KEY = os.getenv('API')
 
 # Initialize the MongoEngine
-db = MongoEngine(app)
+#db = MongoEngine(app)
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure secret key
@@ -31,16 +31,6 @@ app.secret_key = 'your_secret_key'  # Change this to a secure secret key
 # Configure the uploads folder
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'static')
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png', 'gif'}
-
-# Connect to MongoDB using mongoengine
-# Create the Flask-Admin instance
-admin = Admin(app, name='Recipe Admin', template_mode='bootstrap3')
-
-# Add model views for Recipe, Region, SubRegion, and Country
-admin.add_view(ModelView(Recipe))
-admin.add_view(ModelView(Region))
-admin.add_view(ModelView(SubRegion))
-admin.add_view(ModelView(Country))
 
 
 def allowed_file(filename):
@@ -126,70 +116,6 @@ def country_recipe(country_name):
         # Handle the case where the country is not found
         return render_template('recipe.html', country_name=country_name), 404
 
-@app.route('/recipe/submit-food', methods=['POST'])
-def submit_food():
-    # Get data from the form
-    food_name = request.form.get('food-name')
-    food_category = request.form.get('food-category')
-    food_country = request.form.get('food-country')
-    food_description = request.form.get('food-description')
-    food_ingredient = request.form.get('food-ingredient')
-    food_intructions = request.form.get('food-instructions')
-    food_image = request.files['food-image']
-
-    if food_image and allowed_file(food_image.filename):
-        # Save the image to the uploads folder
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], food_image.filename)
-        food_image.save(image_path)
-
-        # Create a new Food object and save it to the database
-        new_food = Food(
-            name=food_name,
-            category=food_category,
-            country=food_country,
-            description=food_description,
-            ingredient=food_ingredient,
-            instuction=food_intructions,
-            image=image_path
-
-        )
-        new_food.save()
-
-        return redirect('/success')  # Redirect to a success page after submission
-
-    return "Invalid file type or no file provided."
-
-
-@app.route('/food_detail/<food_id>', methods=['GET'])
-def food_detail(food_id):
-    food = Food.objects.get(id=food_id)
-    return render_template('recipe_view.html', food=food)
-
-@app.route('/static/')
-def other_page():
-  return render_template('recipe_view.html')
-
-@app.route('/success')
-def success():
-    return render_template('recipe.html')
-    
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-#         user = User.objects(username=username).first()
-#         if user and user.password == password:
-#             login_user(user)
-#             return redirect(url_for('admin.index'))
-#     return render_template('login.html')    
-
-
-# @app.route('/logout')
-# # @login_required
-# def logout():
-#     logout_user()
-#     return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
